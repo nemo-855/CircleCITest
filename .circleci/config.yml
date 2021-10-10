@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: circleci/android:api-31
+      - image: circleci/android:api-28-alpha
     steps:
       - checkout
       - run: # a
