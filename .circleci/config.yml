@@ -1,25 +1,9 @@
 version: 2
 jobs:
   build:
-    commit:
-    acceptance:
-    manual_test:
+    working_directory: ~/code
     docker:
-      - image: circleci/node:4.8.2
+      - image: circleci/android:api-28-alpha
     steps:
       - checkout
       - run: echo "Hello World"
-workflows:
-  version: 2
-  deplayment_pipeline: #workflowtest
-  jobs:
-    - commit
-    - acceptance:
-        requires: #
-          -commit
-    - manual_test:
-        requires: #
-          -acceptance
-    - release:
-        requires: #
-          -manual_test
