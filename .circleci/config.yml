@@ -6,7 +6,7 @@ jobs:
       - image: circleci/android:api-28-alpha
     steps:
       - checkout
-      - -restore_cache:
+      - restore_cache:
           - key: jars-{{checksum "build.gradle"}}-{{checksum "app/build.gradle"}}
       - run: # 依存関係の解決
          name: Download Dependencies
