@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run: # a
-        - name: Download Dependencies
-        - command: ./gradlew androidDependencies
+         name: Download Dependencies
+         command: ./gradlew androidDependencies
       - run: # b
-        - name: Run Compile
-        - command: ./gradlew assembleDebug
+         name: Run Compile
+         command: ./gradlew assembleDebug
