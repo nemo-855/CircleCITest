@@ -6,9 +6,9 @@ jobs:
       - image: circleci/android:api-31
     steps:
       - checkout
-      - run:
+      - run: # a
         - name: Download Dependencies
         - command: ./gradlew androidDependencies
-      - run:
+      - run: # b
         - name: Run Compile
         - command: ./gradlew assembleDebug
