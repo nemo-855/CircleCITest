@@ -3,7 +3,12 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: circleci/android:api-28-alpha
+      - image: circleci/android:api-31
     steps:
       - checkout
-      - run: echo "Hello World"
+      - run: #
+        - name: Download Dependencies
+        - command: ./gradlew androidDependencies
+      - run:
+        - name: Run Compile
+        - command: ./gradlew assembleDebug
